@@ -12,6 +12,7 @@ Module=JSON; JSON.bas
 Module=Service; Service.bas
 Form=frmMain.frm
 ResFile32="Ticket_system_admin.RES"
+Object={831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0; Mscomctl.ocx
 Startup="frmLogin"
 HelpFile=""
 Command32=""

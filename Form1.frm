@@ -86,8 +86,23 @@ Private Sub cmdLogin_Click()
     ElseIf txtAuth(1) = "" Then
         MsgBox "密码为必填！", vbCritical, "错误"
     Else
+        '连接到服务器鉴权
         authJson = Service.makeLoginJson(txtAuth(0), txtAuth(1))
+        
+        login = Service.postLogin(authJson)
+        If login = False Then
+            MsgBox "用户名或密码错误。", vbCritical, "错误"
+        Else
+             '登录成功
+            Unload frmLogin
+            frmMain.Token = login
+            frmMain.Show
+        End If
     End If
-    
-    Service.postLogin (authJson)
+End Sub
+
+Private Sub txtAuth_KeyDown(Index As Integer, KeyCode As Integer, Shift As Integer)
+    If KeyCode = 13 Then
+        cmdLogin_Click
+    End If
 End Sub

@@ -18,6 +18,6 @@ Public Function postLogin(Data As String)
     
     Set ret_obj = HTTP.GetJsonResponse(base_url & "api/admin/login", "POST", Data)
     
-    MsgBox ret_obj.Item("success")
+    postLogin = IIf(ret_obj.Item("success") = "True", ret_obj.Item("token"), False)
     
 End Function
