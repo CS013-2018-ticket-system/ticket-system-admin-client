@@ -21,12 +21,13 @@ Public Function GetJsonResponse(sURL As String, Optional Method As String, Optio
     '' 非常重要(忽略错误)
     aHttpRequest.Option(WinHttpRequestOption_SslErrorIgnoreFlags) = &H3300
     '' 其它请求头设置
-    aHttpRequest.SetRequestHeader "Content-Type", "application/json"
+    If sMethod = "POST" Then
+        aHttpRequest.SetRequestHeader "Content-Type", "application/json"
+    End If
     'aHttpRequest.setRequestHeader "Content-Length", Len(sBody)
-   
+    
     '' 发送
     aHttpRequest.Send sBody
-    
 
     '' 得到返回文本(或者是其它)
     content = aHttpRequest.ResponseText
