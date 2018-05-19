@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "Mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.Form frmMain 
    Caption         =   "订票系统 管理面板"
    ClientHeight    =   4500
@@ -110,5 +110,11 @@ Private Sub Toolbar1_ButtonClick(ByVal Button As MSComctlLib.Button)
             Load frmUser
             SetParent frmUser.hWnd, picMain.hWnd
             frmUser.Show
+        Case 2
+            frmOrder.token = Me.token
+            Load frmOrder
+            SetParent frmOrder.hWnd, picMain.hWnd
+            frmOrder.Show
+            
     End Select
 End Sub
