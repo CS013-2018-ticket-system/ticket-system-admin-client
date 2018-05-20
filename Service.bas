@@ -36,5 +36,4 @@ Public Function getUsers(token As String)
     Else
         Set getUsers = ret_obj
     End If
-    
 End Function

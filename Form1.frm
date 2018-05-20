@@ -70,10 +70,6 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Private Sub Command1_Click()
-
-End Sub
-
 Private Sub cmdExit_Click()
     End
 End Sub
@@ -95,13 +91,13 @@ Private Sub cmdLogin_Click()
         Else
              'µÇÂ¼³É¹¦
             Unload frmLogin
-            frmMain.Token = login
+            frmMain.token = login
             frmMain.Show
         End If
     End If
 End Sub
 
-Private Sub txtAuth_KeyDown(Index As Integer, KeyCode As Integer, Shift As Integer)
+Private Sub txtAuth_KeyDown(index As Integer, KeyCode As Integer, Shift As Integer)
     If KeyCode = 13 Then
         cmdLogin_Click
     End If
