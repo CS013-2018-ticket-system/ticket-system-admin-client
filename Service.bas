@@ -37,3 +37,14 @@ Public Function getUsers(token As String)
         Set getUsers = ret_obj
     End If
 End Function
+
+Public Function getOrders(token As String)
+    Dim ret(2)
+    Set ret_obj = HTTP.GetJsonResponse(constructUrl("api/admin/orders/all", token), "GET")
+    If ret_obj.Item("success") = "False" Then
+        MsgBox ret_obj.Item("msg")
+        ret_obj = Null
+    Else
+        Set getOrders = ret_obj
+    End If
+End Function
