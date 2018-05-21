@@ -2,13 +2,13 @@ VERSION 5.00
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "Mscomctl.ocx"
 Begin VB.Form frmMain 
    Caption         =   "订票系统 管理面板"
-   ClientHeight    =   4500
+   ClientHeight    =   7830
    ClientLeft      =   120
    ClientTop       =   450
-   ClientWidth     =   7800
+   ClientWidth     =   12705
    LinkTopic       =   "Form1"
-   ScaleHeight     =   4500
-   ScaleWidth      =   7800
+   ScaleHeight     =   7830
+   ScaleWidth      =   12705
    StartUpPosition =   3  '窗口缺省
    Begin VB.PictureBox picMain 
       Appearance      =   0  'Flat
@@ -54,8 +54,8 @@ Begin VB.Form frmMain
       Left            =   0
       TabIndex        =   0
       Top             =   0
-      Width           =   7800
-      _ExtentX        =   13758
+      Width           =   12705
+      _ExtentX        =   22410
       _ExtentY        =   1270
       ButtonWidth     =   1138
       ButtonHeight    =   1111
