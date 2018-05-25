@@ -1,29 +1,29 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "Mscomctl.ocx"
 Begin VB.Form frmOrder 
-   ClientHeight    =   8715
+   ClientHeight    =   5985
    ClientLeft      =   120
    ClientTop       =   465
-   ClientWidth     =   17850
+   ClientWidth     =   10095
    LinkTopic       =   "Form1"
-   ScaleHeight     =   8715
-   ScaleWidth      =   17850
+   ScaleHeight     =   5985
+   ScaleWidth      =   10095
    StartUpPosition =   3  '´°¿ÚÈ±Ê¡
    Begin VB.Frame Frame1 
       Caption         =   "Frame1"
-      Height          =   6615
-      Left            =   1680
+      Height          =   5295
+      Left            =   360
       TabIndex        =   0
-      Top             =   960
-      Width           =   14055
+      Top             =   360
+      Width           =   9255
       Begin MSComctlLib.ListView ListView1 
-         Height          =   5535
-         Left            =   720
+         Height          =   4215
+         Left            =   600
          TabIndex        =   1
-         Top             =   720
-         Width           =   12615
-         _ExtentX        =   22251
-         _ExtentY        =   9763
+         Top             =   600
+         Width           =   7695
+         _ExtentX        =   13573
+         _ExtentY        =   7435
          LabelWrap       =   -1  'True
          HideSelection   =   -1  'True
          _Version        =   393217
