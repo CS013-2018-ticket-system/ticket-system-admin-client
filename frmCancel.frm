@@ -21,6 +21,7 @@ Begin VB.Form frmCancel
    End
    Begin VB.CommandButton cmdDetail 
       Caption         =   "查看详情"
+      Enabled         =   0   'False
       Height          =   375
       Left            =   240
       TabIndex        =   1
@@ -45,6 +46,15 @@ Begin VB.Form frmCancel
       BackColor       =   -2147483643
       BorderStyle     =   1
       Appearance      =   1
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "微软雅黑"
+         Size            =   9
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       NumItems        =   5
       BeginProperty ColumnHeader(1) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
          Text            =   "#"
@@ -78,6 +88,9 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Public token As String
+Public refunds As Object
+Public select_order As Object
+Private Declare Function SetParent Lib "user32" (ByVal hWndChild As Long, ByVal hWndNewParent As Long) As Long
 
 Private Sub renderTable(count As Integer, page As Integer, gettype As String)
     ListView1.ListItems.Clear
@@ -86,12 +99,19 @@ Private Sub renderTable(count As Integer, page As Integer, gettype As String)
     For i = 1 To refunds.Item("count")
         Dim itm As ListItem
         Set itm = ListView1.ListItems.Add(, , refunds.Item("data").Item(i).Item("id"))
-        itm.SubItems(1) = refunds.Item("data").Item(i).Item("user").Item("name")
-        itm.SubItems(2) = refunds.Item("data").Item(i).Item("order").Item("price")
+        itm.SubItems(1) = refunds.Item("data").Item(i).Item("order").Item("user").Item("name")
+        itm.SubItems(2) = "￥" & refunds.Item("data").Item(i).Item("order").Item("price")
         itm.SubItems(3) = refunds.Item("data").Item(i).Item("created_at")
         itm.SubItems(4) = IIf(refunds.Item("data").Item(i).Item("has_confirmed"), "已处理", "未处理")
+        itm.Tag = i
     Next
     
+End Sub
+
+Private Sub cmdDetail_Click()
+    Load frmOrderDetail
+    SetParent frmOrderDetail.hWnd, frmMain.picMain.hWnd
+    frmOrderDetail.loadData select_order
 End Sub
 
 Private Sub cmdRefund_Click()
@@ -108,10 +128,18 @@ Private Sub Form_Resize()
     End With
 End Sub
 
+Private Sub ListView1_DblClick()
+    cmdDetail_Click
+End Sub
+
 Private Sub ListView1_ItemClick(ByVal Item As MSComctlLib.ListItem)
     If Item.SubItems(4) = "未处理" Then
         cmdRefund.Enabled = True
     Else
         cmdRefund.Enabled = False
     End If
+    
+    Set select_order = refunds.Item("data").Item(Item.Tag).Item("order")
+    cmdDetail.Enabled = True
+    
 End Sub

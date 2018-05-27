@@ -95,13 +95,17 @@ Private Sub cmdLogin_Click()
         Else
              'µÇÂ¼³É¹¦
             Unload frmLogin
-            frmMain.Token = login
+            frmMain.token = login
             frmMain.Show
         End If
     End If
 End Sub
 
-Private Sub txtAuth_KeyDown(Index As Integer, KeyCode As Integer, Shift As Integer)
+Private Sub Form_Paint()
+    txtAuth(0).SetFocus
+End Sub
+
+Private Sub txtAuth_KeyDown(index As Integer, KeyCode As Integer, Shift As Integer)
     If KeyCode = 13 Then
         cmdLogin_Click
     End If
