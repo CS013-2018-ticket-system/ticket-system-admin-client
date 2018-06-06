@@ -59,3 +59,14 @@ Public Function getRefunds(token As String, count As Integer, page As Integer, g
         Set getRefunds = ret_obj
     End If
 End Function
+
+Public Function confirmRefunds(token As String, id As Integer)
+    Set ret_obj = HTTP.GetJsonResponse(constructUrl("api/admin/refund/" & id & "/confirm", token), "GET")
+    If ret_obj.Item("success") = "False" Then
+        MsgBox ret_obj.Item("msg")
+        Set confirmRefunds = ret_obj
+    Else
+        Set confirmRefunds = ret_obj
+    End If
+End Function
+

@@ -117,7 +117,15 @@ Private Sub cmdDetail_Click()
 End Sub
 
 Private Sub cmdRefund_Click()
-    MsgBox ListView1.SelectedItem.Text
+    confirm = MsgBox("确定要批准退款？此操作不可撤销。", vbYesNo + vbQuestion, "确认")
+    If confirm = vbYes Then
+        Dim ret As Object
+        Set ret = Service.confirmRefunds(token, ListView1.SelectedItem.Text)
+        If ret.Item("success") = "True" Then
+            MsgBox "退款确认成功！", vbInformation, "成功"
+            renderTable 10, 0, "all"
+        End If
+    End If
 End Sub
 
 Private Sub Form_Load()
