@@ -91,7 +91,7 @@ Private Declare Function SetParent Lib "user32" (ByVal hWndChild As Long, ByVal 
 Public token As String
 
 Private Sub Form_Load()
-    'mskinner.Attach Me.hwnd
+    mskinner.Attach Me.hwnd
 End Sub
 
 Private Sub Form_Resize()
