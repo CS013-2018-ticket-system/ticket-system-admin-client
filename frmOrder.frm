@@ -1,26 +1,30 @@
 VERSION 5.00
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "Mscomctl.ocx"
 Begin VB.Form frmOrder 
+   BorderStyle     =   1  'Fixed Single
    Caption         =   "订单详情"
-   ClientHeight    =   5985
-   ClientLeft      =   120
-   ClientTop       =   465
-   ClientWidth     =   10095
+   ClientHeight    =   5460
+   ClientLeft      =   45
+   ClientTop       =   390
+   ClientWidth     =   8700
    LinkTopic       =   "Form1"
-   ScaleHeight     =   5985
-   ScaleWidth      =   10095
+   MaxButton       =   0   'False
+   MinButton       =   0   'False
+   ScaleHeight     =   5460
+   ScaleWidth      =   8700
    StartUpPosition =   3  '窗口缺省
    Begin VB.Frame Frame1 
-      Height          =   5295
-      Left            =   360
+      Caption         =   "所有订单"
+      Height          =   4935
+      Left            =   240
       TabIndex        =   0
-      Top             =   360
-      Width           =   9255
+      Top             =   240
+      Width           =   8175
       Begin MSComctlLib.ListView ListView1 
          Height          =   4215
-         Left            =   600
+         Left            =   240
          TabIndex        =   1
-         Top             =   600
+         Top             =   360
          Width           =   7695
          _ExtentX        =   13573
          _ExtentY        =   7435

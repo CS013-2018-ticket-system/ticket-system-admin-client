@@ -90,6 +90,10 @@ Attribute VB_Exposed = False
 Private Declare Function SetParent Lib "user32" (ByVal hWndChild As Long, ByVal hWndNewParent As Long) As Long
 Public token As String
 
+Private Sub Form_Load()
+    'mskinner.Attach Me.hwnd
+End Sub
+
 Private Sub Form_Resize()
     With picMain
         .Top = Toolbar1.Height
@@ -104,21 +108,21 @@ Private Sub Form_Unload(Cancel As Integer)
 End Sub
 
 Private Sub Toolbar1_ButtonClick(ByVal Button As MSComctlLib.Button)
-    Select Case Button.index
+    Select Case Button.Index
         Case 1
             frmUser.token = Me.token
             Load frmUser
-            SetParent frmUser.hWnd, picMain.hWnd
+            SetParent frmUser.hwnd, picMain.hwnd
             frmUser.Show
         Case 2
             frmOrder.token = Me.token
             Load frmOrder
-            SetParent frmOrder.hWnd, picMain.hWnd
+            SetParent frmOrder.hwnd, picMain.hwnd
             frmOrder.Show
         Case 3
             frmCancel.token = Me.token
             Load frmCancel
-            SetParent frmCancel.hWnd, picMain.hWnd
+            SetParent frmCancel.hwnd, picMain.hwnd
             frmCancel.Show
             
     End Select

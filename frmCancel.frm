@@ -1,14 +1,18 @@
 VERSION 5.00
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "Mscomctl.ocx"
 Begin VB.Form frmCancel 
+   BorderStyle     =   3  'Fixed Dialog
    Caption         =   "取消订单审核"
    ClientHeight    =   4065
-   ClientLeft      =   120
-   ClientTop       =   450
+   ClientLeft      =   45
+   ClientTop       =   375
    ClientWidth     =   6075
    LinkTopic       =   "Form1"
+   MaxButton       =   0   'False
+   MinButton       =   0   'False
    ScaleHeight     =   4065
    ScaleWidth      =   6075
+   ShowInTaskbar   =   0   'False
    StartUpPosition =   3  '窗口缺省
    Begin VB.CommandButton cmdRefund 
       Caption         =   "确认退款"
