@@ -28,10 +28,11 @@ Private Sub Form_Load()
     Set ret_obj = Service.getUsers(token)
     If ret_obj.Item("success") = "True" Then
         user_count = ret_obj.Item("count")
-        Set users = ret_obj.Item("data")
+        Set Users = ret_obj.Item("data")
         For i = 1 To user_count
-            List1.AddItem users.Item(i).Item("name")
+            List1.AddItem Users.Item(i).Item("name")
         Next
     End If
+    
 End Sub
 

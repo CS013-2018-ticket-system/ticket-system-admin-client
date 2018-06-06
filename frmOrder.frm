@@ -1,6 +1,7 @@
 VERSION 5.00
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "Mscomctl.ocx"
 Begin VB.Form frmOrder 
+   Caption         =   "订单详情"
    ClientHeight    =   5985
    ClientLeft      =   120
    ClientTop       =   465
@@ -10,7 +11,6 @@ Begin VB.Form frmOrder
    ScaleWidth      =   10095
    StartUpPosition =   3  '窗口缺省
    Begin VB.Frame Frame1 
-      Caption         =   "Frame1"
       Height          =   5295
       Left            =   360
       TabIndex        =   0

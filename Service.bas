@@ -20,7 +20,7 @@ Public Function postLogin(Data As String)
     
     base_url = LoadResString(101)
     
-    Set ret_obj = http.GetJsonResponse(base_url & "api/admin/login", "POST", Data)
+    Set ret_obj = HTTP.GetJsonResponse(base_url & "api/admin/login", "POST", Data)
     
     postLogin = IIf(ret_obj.Item("success") = "True", ret_obj.Item("token"), False)
     
@@ -28,7 +28,7 @@ End Function
 
 Public Function getUsers(token As String)
     Dim ret(2)
-    Set ret_obj = http.GetJsonResponse(constructUrl("api/admin/users/all", token), "GET")
+    Set ret_obj = HTTP.GetJsonResponse(constructUrl("api/admin/users/all", token), "GET")
     
     If ret_obj.Item("success") = "False" Then
         MsgBox ret_obj.Item("msg")
@@ -40,7 +40,7 @@ End Function
 
 Public Function getOrders(token As String)
     Dim ret(2)
-    Set ret_obj = http.GetJsonResponse(constructUrl("api/admin/orders/all", token), "GET")
+    Set ret_obj = HTTP.GetJsonResponse(constructUrl("api/admin/orders/all", token), "GET")
     If ret_obj.Item("success") = "False" Then
         MsgBox ret_obj.Item("msg")
         ret_obj = Null
@@ -51,7 +51,7 @@ End Function
 
 Public Function getRefunds(token As String, count As Integer, page As Integer, gettype As String)
     Dim ret(2)
-    Set ret_obj = http.GetJsonResponse(constructUrl("api/admin/refund/get", token) & "&count=" & count & "&offset=" & count * page & "&type=" & gettype, "GET")
+    Set ret_obj = HTTP.GetJsonResponse(constructUrl("api/admin/refund/get", token) & "&count=" & count & "&offset=" & count * page & "&type=" & gettype, "GET")
     If ret_obj.Item("success") = "False" Then
         MsgBox ret_obj.Item("msg")
         ret_obj = Null

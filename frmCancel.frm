@@ -109,9 +109,11 @@ Private Sub renderTable(count As Integer, page As Integer, gettype As String)
 End Sub
 
 Private Sub cmdDetail_Click()
-    Load frmOrderDetail
-    SetParent frmOrderDetail.hWnd, frmMain.picMain.hWnd
-    frmOrderDetail.loadData select_order
+    frmCancelDetail.token = Me.token
+    Load frmCancelDetail
+    SetParent frmCancelDetail.hWnd, frmMain.picMain.hWnd
+    frmCancelDetail.loadData select_order
+    frmCancelDetail.Show
 End Sub
 
 Private Sub cmdRefund_Click()
