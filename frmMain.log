@@ -1,2 +1,16 @@
 行 25: 控件 ImageList1 的类 MSComctlLib.ImageList 不是一个已加载的控件类。
 行 51: 控件 Toolbar1 的类 MSComctlLib.Toolbar 不是一个已加载的控件类。
+行 28: 属性名 _ExtentX 在 ImageList1 中是无效的。
+行 29: 属性名 _ExtentY 在 ImageList1 中是无效的。
+行 31: 属性名 ImageWidth 在 ImageList1 中是无效的。
+行 32: 属性名 ImageHeight 在 ImageList1 中是无效的。
+行 33: 属性名 MaskColor 在 ImageList1 中是无效的。
+行 34: 属性名 _Version 在 ImageList1 中是无效的。
+行 49: 属性名 Images 在 ImageList1 中是无效的。
+行 58: 属性名 _ExtentX 在 Toolbar1 中是无效的。
+行 59: 属性名 _ExtentY 在 Toolbar1 中是无效的。
+行 60: 属性名 ButtonWidth 在 Toolbar1 中是无效的。
+行 61: 属性名 ButtonHeight 在 Toolbar1 中是无效的。
+行 63: 属性名 ImageList 在 Toolbar1 中是无效的。
+行 64: 属性名 _Version 在 Toolbar1 中是无效的。
+行 82: 属性名 Buttons 在 Toolbar1 中是无效的。
