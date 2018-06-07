@@ -89,9 +89,10 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Declare Function SetParent Lib "user32" (ByVal hWndChild As Long, ByVal hWndNewParent As Long) As Long
 Public token As String
+Public to_end As Boolean
 
 Private Sub Form_Load()
-    mskinner.Attach Me.hwnd
+    to_end = False
 End Sub
 
 Private Sub Form_Resize()
